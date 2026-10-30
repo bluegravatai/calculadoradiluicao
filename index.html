@@ -9,7 +9,12 @@
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
     <div class="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
-        <h1 class="text-2xl font-bold text-center text-blue-600 mb-6">Calculadora Blue</h1>
+        
+        <!-- Topo com Imagem da Bombona e Título -->
+        <div class="flex flex-col items-center mb-6">
+            <img src="bombona.png" alt="Bombona Blue" class="h-28 object-contain mb-2" onerror="this.style.display='none'">
+            <h1 class="text-2xl font-bold text-blue-600">Calculadora Blue</h1>
+        </div>
         
         <!-- Tamanho da Embalagem -->
         <div class="mb-4">
@@ -87,10 +92,9 @@
 
             // Custo financeiro
             const pricePerMl = price / packageSize;
-            const batchCost = pureNeededMl * pricePerMl; // Custo total do lote desejado
-            const costPerLiter = batchCost / desiredVolume; // Custo por litro da solução
+            const batchCost = pureNeededMl * pricePerMl;
+            const costPerLiter = batchCost / desiredVolume;
 
-            // Formatação de custo por litro (sem limitação de casas decimais fixas)
             const formattedCostPerLiter = costPerLiter.toLocaleString('pt-BR', { 
                 style: 'currency', 
                 currency: 'BRL',
@@ -98,7 +102,6 @@
                 maximumFractionDigits: 6
             });
 
-            // Formatação do custo total da mistura (ex: 5 L x R$ 1,198)
             const formattedTotalCost = batchCost.toLocaleString('pt-BR', { 
                 style: 'currency', 
                 currency: 'BRL',
